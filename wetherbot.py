@@ -32,20 +32,20 @@ def get_number(message, user_name):
     if message.contact:
         user_number = message.contact.phone_number
         db.register(user_id, user_name, user_number)
-        bot.send_message(user_id, 'Отлично! Теперь отправьте свою локацию через кнопку!')
-        bot.register_next_step_handler(message, handle_location)
+        bot.send_message(user_id, '✅ Вы успешно зарегистрированы!✅')
+        bot.register_next_step_handler(message, start)
     else:
-        bot.send_message(user_id, '❌ Ошибка! Отправьте свой номер и локацию через кнопки! ❌')
+        bot.send_message(user_id, '❌ Ошибка! Отправьте свой номер через кнопку! ❌')
         bot.register_next_step_handler(user_id, get_name)
 
-def handle_location(message):
-    user_id = message.from_user.id
-    if message.location:
-        latitude = message.location.latitude
-        longitude = message.location.longitude
-        db.location(latitude, longitude)
-        bot.send_message(user_id, '✅ Вы успешно зарегистрированы!✅', reply_markup=telebot.types.ReplyKeyboardRemove())
-        bot.register_next_step_handler(message, start)
+# def handle_location(message):
+#     user_id = message.from_user.id
+#     if message.location:
+#         latitude = message.location.latitude
+#         longitude = message.location.longitude
+#         db.location(latitude, longitude)
+#         bot.send_message(user_id, '✅ Вы успешно зарегистрированы!✅', reply_markup=telebot.types.ReplyKeyboardRemove())
+#         bot.register_next_step_handler(message, start)
 
 
 

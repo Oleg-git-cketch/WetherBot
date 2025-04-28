@@ -11,9 +11,9 @@ def register(tg_id, name, number):
     sql.execute('INSERT INTO users (tg_id, name, number) VALUES (?, ?, ?);', (tg_id, name, number))
     connection.commit()
 
-def location(latitude, longitude):
-    sql.execute('INSERT INTO location VALUES (?, ?);', (latitude, longitude))
-    connection.commit()
+# def location(latitude, longitude):
+#     sql.execute('INSERT INTO location VALUES (?, ?);', (latitude, longitude))
+#     connection.commit()
 
 def check_user(tg_id):
     if sql.execute('SELECT * FROM users WHERE tg_id=?;', (tg_id,)).fetchone():
