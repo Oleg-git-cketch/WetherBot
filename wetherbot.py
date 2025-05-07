@@ -3,11 +3,10 @@ import requests
 import json
 import database as db
 import buttons as bt
-import os
 
-TOKEN = os.getenv("BOT_TOKEN")
 
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot('7794024742:AAG6LNDmtzDZ8vpDBiwSz-iHuFsHi68ph2Y')
+
 
 API = 'ef0edd48014fd260a773940389f3aa9f'
 
