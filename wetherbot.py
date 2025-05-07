@@ -4,9 +4,6 @@ import json
 import database as db
 import buttons as bt
 import os
-from dotenv import load_dotenv
-
-load_dotenv()  # Загружаем переменные из .env
 
 TOKEN = os.getenv("BOT_TOKEN")
 
