@@ -6,9 +6,10 @@ import buttons as bt
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # загрузка переменных из .env
+load_dotenv()  # Загружаем переменные из .env
 
 TOKEN = os.getenv("BOT_TOKEN")
+
 bot = telebot.TeleBot(TOKEN)
 
 API = 'ef0edd48014fd260a773940389f3aa9f'
@@ -38,7 +39,7 @@ def get_number(message, user_name):
     if message.contact:
         user_number = message.contact.phone_number
         db.register(user_id, user_name, user_number)
-        bot.send_message(user_id, '✅ Вы успешно зарегистрированы!✅')
+        bot.send_message(user_id, '✅ Вы успешно зарегистрированы!✅\nПерезапустите бота - /start')
         bot.register_next_step_handler(message, start)
     else:
         bot.send_message(user_id, '❌ Ошибка! Отправьте свой номер через кнопку! ❌')
