@@ -3,8 +3,14 @@ import requests
 import json
 import database as db
 import buttons as bt
+import os
+from dotenv import load_dotenv
 
-bot = telebot.TeleBot('7995803852:AAG0v6bBloxOIhliWziEucg_SBRcueuHOos')
+load_dotenv()  # загрузка переменных из .env
+
+TOKEN = os.getenv("BOT_TOKEN")
+bot = telebot.TeleBot(TOKEN)
+
 API = 'ef0edd48014fd260a773940389f3aa9f'
 
 
