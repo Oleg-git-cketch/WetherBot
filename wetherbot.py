@@ -5,7 +5,7 @@ import database as db
 import buttons as bt
 
 
-bot = telebot.TeleBot('7794024742:AAG6LNDmtzDZ8vpDBiwSz-iHuFsHi68ph2Y')
+bot = telebot.TeleBot('7794024742:AAEVI8wA1V6OVCOXzuwXHgaZnYtHlMnVjkA')
 
 
 API = 'ef0edd48014fd260a773940389f3aa9f'
